@@ -1,0 +1,1326 @@
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f8fafc;
+  color: #1e293b;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  background: #f8fafc;
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #ffffff;
+
+  border-right: 1px solid #e2e8f0;
+
+  padding: 22px 16px;
+
+  z-index: 100;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 5px 8px 24px;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #eff6ff;
+
+  font-size: 20px;
+}
+
+.logo-section h2 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 18px;
+  font-weight: 750;
+}
+
+.logo-section span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+}
+
+.nav-item {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 11px 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  text-align: left;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.nav-item:hover {
+  background: #f8fafc;
+  color: #2563eb;
+}
+
+.nav-item.active {
+  background: #eff6ff;
+  color: #2563eb;
+
+  font-weight: 650;
+}
+
+
+/* =========================================================
+   AI STATUS
+========================================================= */
+
+.ai-status {
+  margin-top: auto;
+
+  padding: 15px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+}
+
+.status-title {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #334155;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+.ai-status p {
+  margin: 8px 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+
+  line-height: 1.5;
+}
+
+.progress {
+  width: 100%;
+  height: 4px;
+
+  margin: 8px 0;
+
+  overflow: hidden;
+
+  background: #e2e8f0;
+
+  border-radius: 10px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 100%;
+
+  background: #2563eb;
+
+  border-radius: 10px;
+}
+
+.ai-status small {
+  color: #64748b;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.main-content {
+  width: calc(100% - 250px);
+
+  margin-left: 250px;
+
+  min-height: 100vh;
+
+  padding: 28px 38px 45px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 28px;
+}
+
+.header h1 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 27px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.5px;
+}
+
+.header h1 span {
+  color: #2563eb;
+}
+
+.header p {
+  margin: 6px 0 0;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  color: #475569;
+
+  font-size: 12px;
+}
+
+.theme-button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 5px;
+
+  border: 1px solid #e2e8f0;
+
+  background: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+========================================================= */
+
+.features {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+}
+
+.feature-card {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.03);
+}
+
+.feature-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  margin-bottom: 11px;
+
+  font-size: 17px;
+}
+
+.feature-icon.blue {
+  background: #eff6ff;
+}
+
+.feature-icon.purple {
+  background: #f5f3ff;
+}
+
+.feature-icon.orange {
+  background: #fff7ed;
+}
+
+.feature-card h3 {
+  margin: 0;
+
+  color: #1e293b;
+
+  font-size: 13px;
+}
+
+.feature-card p {
+  margin: 5px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   UPLOAD SECTION
+========================================================= */
+
+.upload-section {
+  padding: 25px;
+
+  margin-bottom: 18px;
+
+  text-align: center;
+
+  background: #ffffff;
+
+  border: 1px dashed #cbd5e1;
+
+  border-radius: 12px;
+}
+
+.upload-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 10px;
+
+  border-radius: 50%;
+
+  background: #eff6ff;
+
+  font-size: 20px;
+}
+
+.upload-section h3 {
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 14px;
+}
+
+.upload-section > p {
+  margin: 6px 0 14px;
+
+  color: #94a3b8;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   CHOOSE BUTTON
+========================================================= */
+
+.choose-button {
+  padding: 9px 15px;
+
+  border: none;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+
+  font-weight: 650;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.choose-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+.choose-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   DOCUMENT CARD
+========================================================= */
+
+.document-card {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 13px 15px;
+
+  margin-bottom: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.03);
+}
+
+.pdf-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #fef2f2;
+
+  color: #dc2626;
+
+  border-radius: 8px;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.document-info {
+  flex: 1;
+
+  min-width: 0;
+}
+
+.document-info h3 {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  font-weight: 650;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+.document-info p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 10px;
+}
+
+.success {
+  color: #16a34a;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+.remove-button {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  border-radius: 6px;
+
+  font-size: 18px;
+
+  line-height: 1;
+}
+
+.remove-button:hover {
+  background: #fef2f2;
+
+  color: #dc2626;
+}
+
+
+/* =========================================================
+   PDF PREVIEW
+========================================================= */
+
+.pdf-preview-section {
+  margin-top: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.04);
+}
+
+.pdf-preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+
+  border-bottom: 1px solid #e2e8f0;
+
+  background: #ffffff;
+}
+
+.pdf-preview-header h3 {
+  margin: 0;
+
+  color: #172554;
+
+  font-size: 14px;
+}
+
+.pdf-preview-header p {
+  margin: 4px 0 0;
+
+  color: #64748b;
+
+  font-size: 11px;
+}
+
+.open-pdf-button {
+  text-decoration: none;
+
+  padding: 7px 11px;
+
+  border: 1px solid #dbe3ef;
+
+  background: #f8fafc;
+
+  color: #2563eb;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  transition: 0.2s ease;
+}
+
+.open-pdf-button:hover {
+  background: #eff6ff;
+
+  border-color: #bfdbfe;
+
+  color: #1d4ed8;
+}
+
+.pdf-viewer {
+  width: 100%;
+
+  height: 500px;
+
+  background: #f1f5f9;
+}
+
+.pdf-viewer iframe {
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  display: block;
+}
+
+
+/* =========================================================
+   CHAT MESSAGES
+========================================================= */
+
+.ai-answer {
+  font-size: 13px;
+
+  line-height: 1.65;
+
+  color: #334155;
+}
+
+.ai-answer p {
+  margin-top: 0;
+
+  margin-bottom: 9px;
+}
+
+.ai-answer p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-answer ul,
+.ai-answer ol {
+  margin-top: 7px;
+
+  margin-bottom: 9px;
+
+  padding-left: 20px;
+}
+
+.ai-answer li {
+  margin-bottom: 4px;
+}
+
+.ai-answer strong {
+  color: #172554;
+
+  font-weight: 700;
+}
+
+.ai-answer code {
+  padding: 2px 5px;
+
+  background: #f1f5f9;
+
+  border-radius: 4px;
+
+  font-size: 11px;
+}
+
+
+/* =========================================================
+   COPY ANSWER BUTTON
+========================================================= */
+
+.copy-button {
+  margin-top: 12px;
+
+  padding: 6px 11px;
+
+  border: 1px solid #dbe3ef;
+
+  background: #f8fafc;
+
+  color: #475569;
+
+  border-radius: 7px;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.copy-button:hover {
+  background: #eff6ff;
+
+  color: #2563eb;
+
+  border-color: #bfdbfe;
+}
+
+
+/* =========================================================
+   RAG SOURCES
+========================================================= */
+
+.sources-container {
+  margin-top: 14px;
+
+  padding-top: 12px;
+
+  border-top: 1px solid #e2e8f0;
+}
+
+.sources-title {
+  margin-bottom: 8px;
+
+  color: #475569;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+.source-card {
+  padding: 9px 10px;
+
+  margin-top: 6px;
+
+  background: #f8fafc;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 8px;
+
+  transition: 0.2s ease;
+}
+
+.source-card:hover {
+  background: #f1f5f9;
+
+  border-color: #cbd5e1;
+}
+
+.source-header {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 5px;
+}
+
+.source-number {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #dbeafe;
+
+  color: #2563eb;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.source-label {
+  color: #64748b;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.3px;
+}
+
+.source-text {
+  color: #64748b;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TRY ASKING SOMETHING
+========================================================= */
+
+.questions-section {
+  margin-top: 20px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 3px 10px rgba(15, 23, 42, 0.03);
+}
+
+.questions-section h3 {
+  margin: 0 0 12px;
+
+  color: #172554;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+.questions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+}
+
+
+/* =========================================================
+   DYNAMIC QUESTION BUTTON
+========================================================= */
+
+.question-button {
+  padding: 10px 14px;
+
+  background: #f8fafc;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 8px;
+
+  color: #334155;
+
+  font-size: 12px;
+
+  line-height: 1.4;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.question-button:hover {
+  background: #eff6ff;
+
+  border-color: #93c5fd;
+
+  color: #2563eb;
+
+  transform: translateY(-1px);
+}
+
+.question-button:active {
+  transform: translateY(0);
+}
+
+.question-button:disabled {
+  opacity: 0.6;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   CHAT INPUT
+========================================================= */
+
+.chat-input-container {
+  position: sticky;
+
+  bottom: 15px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 25px;
+
+  padding: 8px;
+
+  background: #ffffff;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 5px 20px rgba(15, 23, 42, 0.08);
+}
+
+.chat-input-container input {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 10px 6px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #334155;
+
+  font-size: 12px;
+}
+
+.chat-input-container input::placeholder {
+  color: #94a3b8;
+}
+
+.chat-input-container input:disabled {
+  cursor: not-allowed;
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   ATTACHMENT BUTTON
+========================================================= */
+
+.attachment-button {
+  width: 34px;
+  height: 34px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  border-radius: 7px;
+
+  font-size: 15px;
+
+  transition: 0.2s ease;
+}
+
+.attachment-button:hover {
+  background: #eff6ff;
+
+  color: #2563eb;
+}
+
+
+/* =========================================================
+   SEND BUTTON
+========================================================= */
+
+.send-button {
+  width: 35px;
+  height: 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border: none;
+
+  background: #2563eb;
+
+  color: #ffffff;
+
+  border-radius: 8px;
+
+  font-size: 16px;
+
+  transition: 0.2s ease;
+}
+
+.send-button:hover {
+  background: #1d4ed8;
+
+  transform: translateY(-1px);
+}
+
+.send-button:disabled {
+  background: #cbd5e1;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8fafc;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .sidebar {
+    width: 210px;
+  }
+
+  .main-content {
+    width: calc(100% - 210px);
+
+    margin-left: 210px;
+
+    padding: 24px;
+  }
+
+  .features {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    position: relative;
+
+    width: 100%;
+
+    min-height: auto;
+
+    border-right: none;
+
+    border-bottom: 1px solid #e2e8f0;
+
+    padding: 12px;
+  }
+
+  .app {
+    display: block;
+  }
+
+  .logo-section {
+    padding-bottom: 12px;
+  }
+
+  .navigation {
+    display: grid;
+
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .ai-status {
+    display: none;
+  }
+
+  .main-content {
+    width: 100%;
+
+    margin-left: 0;
+
+    padding: 20px 14px 35px;
+  }
+
+  .header {
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .profile {
+    display: none;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .pdf-preview-header {
+    padding: 12px;
+  }
+
+  .pdf-preview-header h3 {
+    font-size: 13px;
+  }
+
+  .open-pdf-button {
+    padding: 6px 9px;
+
+    font-size: 10px;
+  }
+
+  .pdf-viewer {
+    height: 400px;
+  }
+
+  .source-text {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE - SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .navigation {
+    grid-template-columns: 1fr;
+  }
+
+  .header h1 {
+    font-size: 20px;
+  }
+
+  .header p {
+    font-size: 11px;
+  }
+
+  .upload-section {
+    padding: 20px 14px;
+  }
+
+  .document-card {
+    padding: 11px;
+  }
+
+  .success {
+    display: none;
+  }
+
+  .pdf-preview-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .open-pdf-button {
+    width: 100%;
+
+    text-align: center;
+  }
+
+  .pdf-viewer {
+    height: 350px;
+  }
+
+  .questions {
+    flex-direction: column;
+  }
+
+  .question-button {
+    width: 100%;
+
+    text-align: left;
+  }
+
+  .chat-input-container {
+    bottom: 8px;
+  }
+
+  .chat-input-container input {
+    font-size: 11px;
+  }
+
+}
